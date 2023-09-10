@@ -1,4 +1,4 @@
-# mysql2sqlite3
+# mysql2sqlite3-sample
 
 ## Procedure
 
