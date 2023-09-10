@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  node-1:
+    image: mysql:8.1.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    restart: always
+    # volumes:
+    # - ./scripts:/docker-entrypoint-initdb.d
+
+networks:
+  mysql-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.114.0/24
